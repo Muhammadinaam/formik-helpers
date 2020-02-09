@@ -1,5 +1,5 @@
 import JsonSchemaFields from './JsonSchemaFields/JsonSchemaFields';
 import inputFieldsMapping from './JsonSchemaFields/inputFieldsMapping';
-import {getInitialValues} from './JsonSchemaFields/helpers';
+import {getInitialValues, validateValues} from './JsonSchemaFields/helpers';
 
-export {JsonSchemaFields, inputFieldsMapping, getInitialValues};
+export {JsonSchemaFields, inputFieldsMapping, getInitialValues, validateValues};

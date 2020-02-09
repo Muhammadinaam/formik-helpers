@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.4.1",
-    "formik": "file:../node_modules/formik",
+    "formik": "^2.1.4",
     "formik-helpers": "file:..",
     "prop-types": "^15.6.2",
     "react": "file:../node_modules/react",

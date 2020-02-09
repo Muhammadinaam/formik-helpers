@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { Field, ErrorMessage, connect, withFormik } from 'formik';
 import defaultInputFieldsMapping from './inputFieldsMapping';
 
 function JsonSchemaFields(props) {
@@ -54,6 +53,7 @@ function JsonSchemaFields(props) {
                 onChange={formikProps.handleChange}
                 onBlur={formikProps.handleBlur}
                 value={formikProps.values[fieldSchema.name]}
+                inputProps={fieldSchema.inputProps}
               />
             }
           </FieldContainer>
@@ -72,7 +72,7 @@ JsonSchemaFields.propTypes = {
       type: PropTypes.string.isRequired,
       initialValue: PropTypes.any,
       validation: PropTypes.array,
-      properties: PropTypes.object,
+      inputProps: PropTypes.object,
       group: PropTypes.string
     })
   ).isRequired,
