@@ -1,0 +1,24 @@
+{
+  "name": "formik-helpers-example",
+  "homepage": "https://Muhammadinaam.github.io/formik-helpers",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "formik": "file:../node_modules/formik",
+    "formik-helpers": "file:..",
+    "prop-types": "^15.6.2",
+    "react": "file:../node_modules/react",
+    "react-dom": "file:../node_modules/react-dom",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^1.1.4",
+    "reactstrap": "^8.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
