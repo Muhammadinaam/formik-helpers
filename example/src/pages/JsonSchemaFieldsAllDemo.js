@@ -36,10 +36,69 @@ export default function JsonSchemaFieldsAllDemo() {
                     type: 'number',
                     name: 'number',
                     initialValue: 15,
-                    inputProps: {
+                    extraProps: {
                         min: "10",
                         max: "20"
                     }
+                }
+            ]
+        },
+        {
+            title: 'Fields Containers Demo',
+            fieldsSchema: [
+                {
+                    type: 'container',
+                    component: 'div',
+                    extraProps: {
+                        className: "row"
+                    },
+                    children: [
+                        {
+                            type: 'container',
+                            component: 'div',
+                            extraProps: {
+                                className: "col-md-6"
+                            },
+                            children: [
+                                {
+                                    label: 'Name',
+                                    type: 'text',
+                                    name: 'container_demo_name',
+                                    initialValue: 'inaam',
+                                }               
+                            ]
+                        },
+                        {
+                            type: 'container',
+                            component: 'div',
+                            extraProps: {
+                                className: "col-md-6"
+                            },
+                            children: [
+                                {
+                                    label: 'Email',
+                                    type: 'email',
+                                    name: 'container_demo_email',
+                                    initialValue: 'abc@abc.com',
+                                }
+                            ]
+                        }       
+                    ]
+                },
+                {
+                    type: 'container',
+                    component: 'BsCard',
+                    extraProps: {
+                        header_text: 'Demo Card Container',
+                    },
+                    children: [
+                        {
+                            label: 'Number',
+                            type: 'number',
+                            name: 'container_demo_number',
+                            initialValue: '15'
+                        }        
+                    ]
                 }
             ]
         },
@@ -50,23 +109,13 @@ export default function JsonSchemaFieldsAllDemo() {
                     label: 'Email',
                     type: 'email',
                     name: 'valid-email',
-                    validation: [
-                        ["yup.string"],
-                        ["yup.email"],
-                        ["yup.required"]
-                    ]
+                    validation: 'email|required'
                 },
                 {
                     label: 'Number',
                     type: 'number',
                     name: 'valid-number',
-                    validation: [
-                        ["yup.number"],
-                        ["yup.required"],
-                        ["yup.min", 50],
-                        ["yup.max", 500],
-
-                    ]
+                    validation: 'numeric|required'
                 }
             ]
         }

@@ -1,29 +1,24 @@
-import * as yup from 'yup';
-
 export const getInitialValues = (jsonSchema) => {
     let initialValues = {};
 
-    jsonSchema.forEach(jsonObj => {
-        initialValues[jsonObj.name] = jsonObj.initialValue ? jsonObj.initialValue : '';
-    });
+    getInitialValuesRecursively(jsonSchema, initialValues);
+    
     return initialValues;
 };
 
-export const validateValues = (jsonSchema, values, group = null) => {
-    let shapeObject = {};
-    let filteredJsonSchema = jsonSchema.filter(j => {
-        return j.group == group;
-    })
-    filteredJsonSchema.forEach(jsonObj => {
-        if (jsonObj.validation) {
-            shapeObject[jsonObj.name] = transformAll(jsonObj.validation);
+function getInitialValuesRecursively(jsonSchema, initialValues) {
+    jsonSchema.forEach(jsonObj => {
+        if(jsonObj.name) {
+            initialValues[jsonObj.name] = jsonObj.initialValue ? jsonObj.initialValue : '';
+        }
+
+        if(jsonObj.children) 
+        {
+            getInitialValuesRecursively(jsonObj.children, initialValues)
         }
     });
-    let schema = yup.object().shape(shapeObject);
+}
 
-    schema
-        .isValid(values)
-        .then(function (valid) {
-            console.log(valid);
-        });
+export const validateValues = (jsonSchema, values, group = null) => {
+    
 }

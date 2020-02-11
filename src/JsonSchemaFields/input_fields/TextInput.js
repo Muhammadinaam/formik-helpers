@@ -9,7 +9,7 @@ export default function TextInput(props) {
             onChange={props.onChange}
             onBlur={props.onBlur}
             value={props.value}
-            {...props.inputProps}
+            {...props.props}
         />
     )
 }

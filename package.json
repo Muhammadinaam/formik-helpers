@@ -25,7 +25,9 @@
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
-    "formik": "^2.1.4"
+    "formik": "^2.1.4",
+    "bootstrap": "^4.4.1",
+    "reactstrap": "^8.4.1"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
@@ -57,7 +59,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-url": "^1.4.0",
-    "yup": "^0.28.1"
+    "formik": "^2.1.4"
   },
   "files": [
     "dist"
