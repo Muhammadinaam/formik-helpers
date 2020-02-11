@@ -11,7 +11,7 @@ export default function BsCard(props) {
     return (
         <Fragment>
             <Card className="mt-3 shadow-sm">
-                <CardHeader className="bg-warning">
+                <CardHeader className="bg-warning" onClick={() => { setIsOpen(!isOpen) }}>
                     <b>{props.header}</b>
                     <button className="btn btn-sm btn-info float-right" onClick={() => { setIsOpen(!isOpen) }}>{isOpen ? '-' : '+'}</button>
                 </CardHeader>
